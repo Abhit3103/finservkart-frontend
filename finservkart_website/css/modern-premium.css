@@ -1,0 +1,729 @@
+/* ============================================
+   FINTECH MODERN PREMIUM THEME
+   ============================================ */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fintech-primary: #2563eb;
+    --fintech-dark: #1e40af;
+    --fintech-darker: #1e3a8a;
+    --fintech-light: #dbeafe;
+    --fintech-accent: #10b981;
+    --fintech-warning: #f59e0b;
+    --fintech-danger: #ef4444;
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+    --text-lighter: #94a3b8;
+    --bg-light: #f8fafc;
+    --bg-lighter: #f1f5f9;
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: var(--bg-light);
+}
+
+/* ========== NAVBAR STYLING ========== */
+.navbar {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(37, 99, 235, 0.08);
+}
+
+.navbar.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 26px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-accent) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 40px;
+    letter-spacing: -0.5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.2));
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--text-dark) !important;
+    margin: 0 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -8px;
+    left: 50%;
+    background: linear-gradient(90deg, var(--fintech-primary), var(--fintech-accent));
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--fintech-primary) !important;
+    transform: translateY(-2px);
+}
+
+/* ========== HERO SECTION ENHANCEMENTS ========== */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-dark) 50%, var(--fintech-darker) 100%);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at -10% 100%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.badge {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ========== SERVICE CARDS - FINTECH ========== */
+.service-card {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 32px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--fintech-primary), var(--fintech-accent));
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--fintech-primary);
+}
+
+.service-card:hover::before {
+    height: 6px;
+}
+
+.service-card .icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.08) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-accent) 100%);
+}
+
+.service-card:hover .icon-wrapper i {
+    color: white;
+}
+
+.service-card .icon-wrapper i {
+    font-size: 28px;
+    color: var(--fintech-primary);
+    transition: all 0.3s ease;
+}
+
+.service-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.service-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 16px;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.service-card a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--fintech-primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.service-card a:hover {
+    color: var(--fintech-accent);
+    transform: translateX(4px);
+}
+
+/* ========== FEATURES SECTION ========== */
+.features-section {
+    background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+    padding: 80px 0;
+    position: relative;
+}
+
+.feature-item {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-item:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: var(--fintech-primary);
+}
+
+.feature-item .icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.08) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 36px;
+    color: var(--fintech-primary);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .icon {
+    transform: scale(1.15) rotate(-5deg);
+    background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-accent) 100%);
+    color: white;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* ========== STATS SECTION ========== */
+.stats-section {
+    background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-dark) 50%, #1e40af 100%);
+    padding: 80px 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+.stats-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: 5%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.08);
+    animation: float 8s ease-in-out infinite 2s;
+}
+
+.stat-item {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-item h3 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+.stat-item p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+/* ========== BUTTONS - FINTECH STYLE ========== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-accent) 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    background: linear-gradient(135deg, var(--fintech-dark) 0%, #059669 100%);
+}
+
+.btn-light {
+    background: white;
+    color: var(--fintech-primary);
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+.btn-light:hover {
+    background: var(--bg-lighter);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-light {
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-weight: 600;
+    border: 2px solid white;
+    color: white;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+    backdrop-filter: blur(10px);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1200px) {
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    
+    .service-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 8px 0;
+        padding: 8px 0;
+    }
+
+    .hero-section {
+        padding-top: 80px;
+        min-height: auto;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .d-flex.gap-3 .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+
+    .feature-item {
+        padding: 20px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .hero-section::before,
+    .hero-section::after {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section p {
+        font-size: 0.95rem;
+    }
+
+    .d-flex.gap-5 {
+        gap: 2rem !important;
+        flex-direction: column;
+    }
+
+    .stat-item h3 {
+        font-size: 1.8rem;
+    }
+
+    .stat-item p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ========== UTILITY CLASSES ========== */
+.text-gradient {
+    background: linear-gradient(120deg, var(--primary-color), var(--accent-gold));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rounded-xl {
+    border-radius: 20px;
+}
+
+.shadow-sm {
+    box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+    box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+    box-shadow: var(--shadow-lg);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.transition-all {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ========== PAGE HEADERS ========== */
+.page-header {
+    background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-dark) 100%);
+    padding: 80px 0 60px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.page-header h1 {
+    color: white;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+    position: relative;
+    z-index: 1;
+}
+
+.page-header .breadcrumb {
+    position: relative;
+    z-index: 1;
+}
+
+.page-header .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.page-header .breadcrumb-item a:hover {
+    color: white;
+}
+
+.page-header .breadcrumb-item.active {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ========== FORM STYLING ========== */
+.form-control, .form-select {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--fintech-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    outline: none;
+}
+
+.form-floating > label {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+/* ========== CARDS ========== */
+.card {
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.card-body {
+    padding: 24px;
+}
+
+/* ========== SECTIONS ========== */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 48px;
+    max-width: 600px;
+}
+
+/* ========== TABLE STYLING ========== */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.table thead {
+    background: linear-gradient(135deg, var(--fintech-primary) 0%, var(--fintech-dark) 100%);
+    color: white;
+}
+
+.table thead th {
+    border: none;
+    padding: 16px;
+    font-weight: 600;
+}
+
+.table tbody td {
+    border-color: var(--border-light);
+    padding: 16px;
+    vertical-align: middle;
+    color: var(--text-dark);
+}
+
+.table tbody tr:hover {
+    background: var(--bg-lighter);
+}
+
+/* ========== SCROLLBAR STYLING ========== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--fintech-primary), var(--fintech-accent));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fintech-dark);
+}
